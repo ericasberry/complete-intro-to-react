@@ -6,7 +6,12 @@
     "format":
       "prettier --write --single-quote --print-width=120 --parser=flow --tab-width=2 \"js/**/*.{js,jsx}\"",
     "lint": "eslint **/*.{js,jsx} --quiet",
+    "test": "jest",
+    "test:update": "jest -u",
     "watch": "webpack --watch"
+  },
+  "jest": {
+    "snapshotSerializers": ["jest-serializer-enzyme"]
   },
   "dependencies": {
     "axios": "0.16.1",
@@ -55,7 +60,7 @@
     "eslint-plugin-prettier": "2.1.1",
     "eslint-plugin-react": "7.0.1",
     "flow-bin": "0.47.0",
-    "jest": "20.0.4",
+    "jest": "^20.0.4",
     "jest-serializer-enzyme": "1.0.0",
     "moxios": "0.4.0",
     "nodemon": "1.11.0",
