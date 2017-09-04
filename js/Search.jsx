@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import ShowCard from "./ShowCard";
-import preload from "../data.json";
 
 class Search extends Component {
   state = {
@@ -22,7 +22,7 @@ class Search extends Component {
           />
         </header>
         <div>
-          {preload.shows
+          {this.props.shows
             .filter(
               show =>
                 `${show.title} ${show.description}`
@@ -40,5 +40,7 @@ class Search extends Component {
     <pre><code>{JSON.stringify(preload, null, 2)}</code></pre>
 
 */
-
+Search.propTypes = {
+  shows: PropTypes.shape.isRequired
+};
 export default Search;
